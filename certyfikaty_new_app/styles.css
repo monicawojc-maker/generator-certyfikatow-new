@@ -1,0 +1,14 @@
+
+body{font-family:Montserrat, Arial, sans-serif;background:#f3f6f9;color:#111;margin:0;padding:18px}
+.container{max-width:1100px;margin:0 auto;background:#fff;padding:18px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.panel{flex:1;min-width:320px}
+#previewWrap{position:relative;border:1px solid #ddd;padding:8px;background:#eee;display:flex;justify-content:center;align-items:center;min-height:420px}
+#pdfCanvas{border:1px solid #ccc;max-width:100%;height:auto;display:block}
+#overlay{position:absolute;left:8px;top:8px;pointer-events:auto}
+.marker{position:absolute;background:rgba(255,255,255,0.9);border:1px dashed #666;padding:2px 6px;border-radius:4px;font-size:12px;pointer-events:none}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.big{background:#0b6b3a;color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+.preview{max-height:140px;overflow:auto;background:#fafafa;border:1px solid #eee;padding:6px;margin-top:6px}
+.small{font-size:13px;color:#666}
+#status{margin-top:8px;color:#0b6b3a}
