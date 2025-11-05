@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generator Certyfikatów — Monika</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Generator Certyfikatów</h1>
+    <div class="row">
+      <div class="panel">
+        <label>1) Szablon PDF (A4 pionowy)</label>
+        <input type="file" id="fileTemplate" accept="application/pdf" />
+        <button id="useDefault">Użyj domyślnego szablonu</button>
+        <hr/>
+        <label>2) Plik Excel (.xlsx)</label>
+        <input type="file" id="fileExcel" accept=".xlsx,.xls" />
+        <button id="useDefaultExcel">Użyj domyślnego danych</button>
+        <div id="excelPreview" class="preview"></div>
+      </div>
+
+      <div class="panel">
+        <label>3) Podgląd i rozmieszczanie pól — kliknij, aby dodać</label>
+        <div id="previewWrap">
+          <canvas id="pdfCanvas"></canvas>
+          <div id="overlay"></div>
+        </div>
+        <div class="controls">
+          <label>Pole: <select id="fieldSelect"></select></label>
+          <label>Rozmiar: <input id="fontSize" type="number" value="18" min="8" max="72" /></label>
+          <label>Czcionka: <select id="fontFamily"><option value="Lora">Lora</option><option value="Montserrat">Montserrat</option></select></label>
+          <label>Kolor: <input id="fontColor" type="color" value="#000000" /></label>
+          <button id="clearFields">Wyczyść pola</button>
+        </div>
+        <div class="actions">
+          <button id="generate" class="big">Generuj certyfikaty i pobierz ZIP</button>
+          <div id="status"></div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <p class="small">Uwaga: generowanie odbywa się w przeglądarce — Twoje dane nie opuszczają komputera.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
